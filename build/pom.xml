@@ -2,7 +2,7 @@
   <parent>
     <artifactId>teiid-parent</artifactId>
     <groupId>org.jboss.teiid</groupId>
-        <version>8.13.0.Alpha2-SNAPSHOT</version>
+        <version>8.13.0.Beta2-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   
@@ -39,22 +39,22 @@
             <artifactId>slf4j-api</artifactId>
         </dependency> 
        
-	<dependency>
-	    <groupId>org.jboss.narayana.jta</groupId>
-	    <artifactId>narayana-jta</artifactId>
-	</dependency> 
-	<dependency>
-	    <groupId>org.jboss.ironjacamar</groupId>
-	    <artifactId>ironjacamar-jdbc</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.jboss.ironjacamar</groupId>
-	    <artifactId>ironjacamar-core-api</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.jboss.ironjacamar</groupId>
-	    <artifactId>ironjacamar-core-impl</artifactId>
-	</dependency>
+		<dependency>
+		    <groupId>org.jboss.narayana.jta</groupId>
+		    <artifactId>narayana-jta</artifactId>
+		</dependency> 
+		<dependency>
+		    <groupId>org.jboss.ironjacamar</groupId>
+		    <artifactId>ironjacamar-jdbc</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.jboss.ironjacamar</groupId>
+		    <artifactId>ironjacamar-core-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.jboss.ironjacamar</groupId>
+		    <artifactId>ironjacamar-core-impl</artifactId>
+		</dependency>
 
     </dependencies>   
       
@@ -120,17 +120,14 @@
                                     <type>zip</type>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>
-                                <!-- 
                                 <artifactItem>
-                                    <groupId>org.jboss.teiid.web-console</groupId>
-                                    <artifactId>teiid-console-dist</artifactId>
-                                    <version>${version.teiid.console}</version>
-                                    <classifier>wildfly</classifier>
-                                    <type>zip</type>
-                                    <outputDirectory>${project.build.directory}/${dir.jboss-orig}</outputDirectory>
-                                    <overWrite>true</overWrite>
+									  <groupId>org.jboss.teiid.hal</groupId>
+									  <artifactId>dist</artifactId>
+									  <version>${version.teiid.console}</version>
+									  <classifier>overlay</classifier>
+									  <type>zip</type>
+	                                  <outputDirectory>${project.build.directory}/${dir.wildfly}</outputDirectory>
                                 </artifactItem>
-                                 -->
                             </artifactItems>
                         </configuration>
                     </execution>
@@ -145,7 +142,6 @@
                         <descriptor>assembly/client-jar.xml</descriptor>
                         <descriptor>assembly/wildfly-dist.xml</descriptor>
                         <descriptor>assembly/adminshell-dist.xml</descriptor>
-                        <descriptor>assembly/embedded-dist.xml</descriptor>
                         <descriptor>assembly/wildfly-server.xml</descriptor>
                         <descriptor>assembly/docker.xml</descriptor>            
                     </descriptors>
@@ -260,7 +256,6 @@
                                 <descriptor>assembly/client-jar.xml</descriptor>
                                 <descriptor>assembly/wildfly-dist.xml</descriptor>
                                 <descriptor>assembly/adminshell-dist.xml</descriptor>
-                                <descriptor>assembly/embedded-dist.xml</descriptor>
                                 <descriptor>assembly/wildfly-server.xml</descriptor>
                                 <descriptor>assembly/docker.xml</descriptor>
                             </descriptors>
